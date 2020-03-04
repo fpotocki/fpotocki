@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>VJEZBA</title>
+</head>
+<body> 
+<script>
+function myFunction() {
+  var a = document.getElementById("txt1").value;
+  var b = document.getElementById("txt2").value;
+  var izbor=  document.querySelector('input[id="rb"]:checked').value;
+  if (izbor=="povrsina"){
+  var z= +a * +b;
+  document.getElementById("rezultat").innerHTML = z; 
+	}
+else if (izbor=="opseg"){
+  var z= 2*+a + 2* +b;
+  document.getElementById("rezultat").innerHTML = z; 
+	}
+  else {
+document.getElementById("rezultat").innerHTML = "Ne znam kako izračunati volumen :("; 
+}
+ }
+
+</script>
+<h1>IZRAČUN</h1>
+<p>
+  Duljina stranice A:
+  <input type="text" id="txt1" name="text1" value="">
+<br/>
+</p>
+<p>
+  Duljina stranice B:
+  <input type="text" id="txt2" name="text2" value="">
+<br/>
+
+</p>
+<br/>
+
+<form>
+  <p>Što želiš izračunati?</p>
+  <input type="radio" id="rb" name ="pov" value="povrsina">
+  <label for="pov">površina</label><br>
+  <input type="radio" id="rb" name="ops" value="opseg">
+  <label for="opseg">opseg</label><br>  
+  <input type="radio" id="rb" name="vol" value="volumen">
+  <label for="volumen">volumen</label><br><br>
+ 
+</form>
+ <button onclick="myFunction()">Isprobaj</button>
+<p id="rezultat"> </p>	
+</body>
+</html> 
